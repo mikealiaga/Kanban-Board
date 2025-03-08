@@ -1,16 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
-import Board from './pages/Board';
+import { Outlet } from 'react-router-dom';
+
+import Navbar from './components/Navbar';
 
 function App() {
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/board" element={<Board />} />
-      </Routes>
-    </Router>
-  );
+    <div className='container'>
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+    </div>
+  )
 }
 
-export default App;
+export default App
